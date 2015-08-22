@@ -1,10 +1,11 @@
 {
-	"full_name": "Audrey Roy",
-	"email": "audreyr@gmail.com",
-	"github_username": "audreyr",
+	"full_name": "Lars Holm Nielsen",
+    "copyright_holder": "Lars Holm Nielsen",
+	"email": "lars@hankat.dk",
+	"github_username": "lnielsen",
 	"project_name": "Python Boilerplate",
 	"repo_name": "boilerplate",
-	"project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+	"project_short_description": "Boilerplate contains all you need to create a Python package.",
 	"release_date": "2015-01-11",
 	"year": "2015",
 	"version": "0.1.0"

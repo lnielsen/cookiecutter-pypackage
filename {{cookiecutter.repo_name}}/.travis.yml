@@ -1,4 +1,11 @@
-# Config file for automatic testing at travis-ci.org
+# This file is part of {{ cookiecutter.project_name }}
+# Copyright (C) {{ cookiecutter.year }} {{ cookiecutter.copyright_holder }}.
+#
+# {{ cookiecutter.project_name }} is free software; you can redistribute it and/or
+# modify it under the terms of the Revised BSD License; see LICENSE
+# file for more details.
+
+sudo: false
 
 language: python
 
@@ -9,8 +16,36 @@ python:
   - "2.6"
   - "pypy"
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements.txt
+env:
+  - REQUIREMENTS=devel
+  - REQUIREMENTS=latest
+  - REQUIREMENTS=lowest
 
-# command to run tests, e.g. python setup.py test
-script: python setup.py test
+cache:
+  - pip
+
+install:
+  # Install test dependencies
+  - "travis_retry pip install coveralls pep257 Sphinx twine wheel"
+  - "travis_retry pip install pytest pytest-pep8 pytest-cov pytest-cache"
+  - "travis_retry pip install -r requirements.${REQUIREMENTS}.txt"
+  - "travis_retry pip install -e ."
+
+script: ./run-tests.sh
+
+after_success:
+  - coveralls
+
+notifications:
+  email: false
+
+deploy:
+  provider: pypi
+  user: {{cookiecutter.github_username}}
+  password:
+    secure: CHANGEME
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
+    python: "2.7"
+    condition: $REQUIREMENTS = latest

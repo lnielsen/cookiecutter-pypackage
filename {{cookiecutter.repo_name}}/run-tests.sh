@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # This file is part of {{ cookiecutter.project_name }}
 # Copyright (C) {{ cookiecutter.year }} {{ cookiecutter.copyright_holder }}.
 #
@@ -7,11 +5,7 @@
 # modify it under the terms of the Revised BSD License; see LICENSE
 # file for more details.
 
-
-"""Tests for `{{ cookiecutter.repo_name }}` module."""
-
-from {{ cookiecutter.repo_name }} import {{ cookiecutter.repo_name }}
-
-
-def test_{{ cookiecutter.repo_name }}():
-    """Test {{ cookiecutter.repo_name }}."""
+pep257 {{ cookiecutter.repo_name }} && \
+sphinx-build -qnNW docs docs/_build/html && \
+python setup.py test && \
+sphinx-build -qnNW -b doctest docs docs/_build/doctest

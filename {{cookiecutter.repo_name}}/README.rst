@@ -1,18 +1,18 @@
-===============================
-{{ cookiecutter.project_name }}
-===============================
+{{ '=' * (cookiecutter.project_name|length + 2) }}
+ {{ cookiecutter.project_name }}
+{{ '=' * (cookiecutter.project_name|length + 2) }}
 
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg
+.. image:: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}.svg?branch=master
         :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
+
+.. image:: https://coveralls.io/repos/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}/badge.svg?branch=master
+    :target: https://coveralls.io/r/{{ cookiecutter.github_username }}/{{ cookiecutter.repo_name }}
 
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.repo_name }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.repo_name }}
 
 
 {{ cookiecutter.project_short_description}}
-
-* Free software: BSD license
-* Documentation: https://{{ cookiecutter.repo_name }}.readthedocs.org.
 
 Features
 --------
