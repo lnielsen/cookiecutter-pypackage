@@ -7,10 +7,10 @@
 # modify it under the terms of the Revised BSD License; see LICENSE
 # file for more details.
 
-"""{{ cookiecutter.repo_name }} module."""
+"""{{ cookiecutter.package_name }} module."""
 
 from __future__ import absolute_import, unicode_literals, print_function
 
 
-def {{ cookiecutter.repo_name }}():
-    """Do {{ cookiecutter.repo_name }}."""
+def {{ cookiecutter.package_name }}():
+    """Do {{ cookiecutter.package_name }}."""
